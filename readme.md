@@ -1,0 +1,1 @@
+# Twitter, Facebook, Google+, Instapaper & LinkedIn social link that do not rely on Javascript
