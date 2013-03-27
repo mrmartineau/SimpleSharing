@@ -1,5 +1,27 @@
-<a href="https://twitter.com/intent/tweet?original_referer=REFERRER_URL&source=tweetbutton&text=TWEET_TEXT&url=URL&via=MrMartineau" title="Tweet this">Tweet this</a>
-<a href="http://www.facebook.com/share.php?u=URL&t=TITLE">Share on Facebook</a>
-<a href="http://www.instapaper.com/hello2?url=URL&amp;title=TITLE">Read Later</a>
-<a href="https://m.google.com/app/plus/x/?content=CONTENT+AND+URL+GOES+HERE&v=compose&hideloc=1">Google+</a>
-<a href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fblog.easy-designs.net%2Farchives%2F2011%2F12%2F16%2Fjavascript-less-google-finally%2F&original_referer=http%3A%2F%2Fblog.easy-designs.net%2Farchives%2F2011%2F12%2F16%2Fjavascript-less-google-finally%2F">LinkedIn</a>
+<!-- Twitter -->
+<a href="https://twitter.com/intent/tweet?original_referer={REFERRER_URL}&source=tweetbutton&text={{TWEET_TEXT}}&url={URL}&via=MrMartineau" title="Tweet this">Tweet this</a>
+
+<!-- Facebook -->
+<a href="http://www.facebook.com/share.php?u={URL}&t={TITLE}">Share on Facebook</a>
+
+<!-- Google plus -->
+<a href="https://plus.google.com/share?url={URL}">Google+</a>
+
+<a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
+  src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Share on Google+"/></a>
+
+<!-- Pinterest -->
+<a href="//pinterest.com/pin/create/button/?url={URL}&media={IMAGE_URL}&description={DESCRIPTION}"></a>
+
+<!-- Instapaper -->
+<a href="http://www.instapaper.com/hello2?url={URL}&amp;title={TITLE}">Read Later</a>
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fblog.easy-designs.net%2Farchives%2F2011%2F12%2F16%2Fjavascript-less-google-finally%2F&original_referer={REFERRER}">LinkedIn</a>
+
+<!-- The Fancy -->
+<a href="http://www.thefancy.com/fancyit?ItemURL={URL}&Title={TITLE}&Category={CATEGORY}&ImageURL={IMAGE_URL}">Fancy</a>
+
+<!-- Tumblr -->
+<a href="http://www.tumblr.com/share/link?url={URL}&name={NAME}&description={DESCRIPTION}" title="Share on Tumblr">Share on Tumblr</a>
