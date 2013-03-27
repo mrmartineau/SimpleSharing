@@ -1,1 +1,10 @@
-# Twitter, Facebook, Google+, Instapaper & LinkedIn social link that do not rely on Javascript
+# Social/Share links that do not rely on Javascript
+
+* Twitter
+* Facebook
+* Google+
+* Instapaper
+* LinkedIn
+* Tumblr
+* Pinterest
+* The Fancy
