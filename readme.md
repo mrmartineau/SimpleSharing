@@ -1,4 +1,4 @@
-# Social/Share links that do not rely on Javascript
+# Social / share links that do not rely on Javascript
 
 * Twitter
 * Facebook
