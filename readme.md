@@ -8,3 +8,5 @@
 * Tumblr
 * Pinterest
 * The Fancy
+
+[View them here](https://github.com/mrmartineau/Javascript-less-Social-Links/blob/master/index.html)
