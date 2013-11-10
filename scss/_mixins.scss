@@ -1,0 +1,114 @@
+// @include prefixer(border-radius, $radii, webkit ms spec);
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin
+
+@mixin prefixer($property, $value, $prefixes) {
+	@each $prefix in $prefixes {
+
+		@if $prefix == webkit and $prefix-for-webkit == true {
+			-webkit-#{$property}: $value;
+		}
+		@else if $prefix == moz and $prefix-for-mozilla == true {
+			-moz-#{$property}: $value;
+		}
+		@else if $prefix == ms and $prefix-for-microsoft == true {
+			-ms-#{$property}: $value;
+		}
+		@else if $prefix == o and $prefix-for-opera == true {
+			-o-#{$property}: $value;
+		}
+		@else if $prefix == spec and $prefix-for-spec == true {
+			#{$property}: $value;
+		}
+		@else  {
+			@warn "Unrecognized prefix: #{$prefix}";
+		}
+	}
+}
+
+// @include disable-prefix-for-all();
+@mixin disable-prefix-for-all() {
+	$prefix-for-webkit:    false;
+	$prefix-for-mozilla:   false;
+	$prefix-for-microsoft: false;
+	$prefix-for-opera:     false;
+	$prefix-for-spec:      false;
+}
+
+
+// BORDER RADIUS
+// @include border-radius(10px);
+// @include border-radius(10px 10px 5px 20px);
+// @include border-radius(TL TR BR BL);
+@mixin border-radius($arg: 5px) {
+	@include prefixer(border-radius, $arg, webkit moz o spec);
+}
+
+// DROP SHADOWS
+// @include box-shadow(0 1px 3px rgba(0,0,0,.25));
+@mixin box-shadow($arg: 0 1px 3px rgba(0,0,0,.25)) {
+	@include prefixer(box-shadow, $arg, webkit moz o spec);
+}
+
+// TRANSITIONS
+// @include transition(all 0.2s ease-in-out)
+@mixin transition($arg: all 0.2s ease-in-out) {
+	@include prefixer(transition, $arg, webkit moz o spec);
+}
+
+// Background sizing - IE9+
+// https://developer.mozilla.org/en-US/docs/CSS/background-size
+// http://caniuse.com/#feat=background-img-opts
+// @include background-size(50px 40px);
+@mixin background-size($arg: contain) {
+	@include prefixer(background-size, $arg, webkit moz ms spec);
+}
+
+// User select
+// http://caniuse.com/#feat=user-select-none
+// @include user-select(none)
+@mixin user-select($arg: none) {
+	@include prefixer(user-select, $arg, webkit moz ms spec);
+}
+
+@mixin linear-gradient( $pos, $G1, $G2: false,
+						$G3: false, $G4: false,
+						$G5: false, $G6: false,
+						$G7: false, $G8: false,
+						$G9: false, $G10: false,
+						$deprecated-pos1: left top,
+						$deprecated-pos2: left bottom,
+						$fallback: false) {
+
+	// Detect what type of value exists in $pos
+	$pos-type: type-of(nth($pos, 1));
+
+	// If $pos is missing from mixin, reassign vars and add default position
+	@if ($pos-type == color) or (nth($pos, 1) == "transparent") {
+		$G10: $G9; $G9: $G8; $G8: $G7; $G7: $G6; $G6: $G5;
+		 $G5: $G4; $G4: $G3; $G3: $G2; $G2: $G1; $G1: $pos;
+		$pos: top; // Default position
+	}
+
+	$full: compact($G1, $G2, $G3, $G4, $G5, $G6, $G7, $G8, $G9, $G10);
+
+	// Set $G1 as the default fallback color
+	$fallback-color: nth($G1, 1);
+
+	// If $fallback is a color use that color as the fallback color
+	@if (type-of($fallback) == color) or ($fallback == "transparent") {
+		$fallback-color: $fallback;
+	}
+
+	background-color: $fallback-color;
+	background-image: deprecated-webkit-gradient(linear, $deprecated-pos1, $deprecated-pos2, $full); // Safari <= 5.0
+	background-image:  -webkit-linear-gradient($pos, $full); // Safari 5.1+, Chrome
+	background-image:     -moz-linear-gradient($pos, $full);
+	background-image:      -ms-linear-gradient($pos, $full);
+	background-image:       -o-linear-gradient($pos, $full);
+	background-image:          linear-gradient(#{$pos}, #{$full});
+	background-repeat: repeat-x;
+}

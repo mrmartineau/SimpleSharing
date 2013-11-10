@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Social share buttons
+
+   * Created by Zander Martineau
+   ========================================================================== */
+
+
+
+@import "mixins";
+
+@font-face {
+	font-family: 'Social';
+	src: url('/font/social.eot');
+	src: url('/font/social.eot?#iefix')		format('embedded-opentype'),
+		 url('/font/social.woff')			format('woff'),
+		 url('/font/social.ttf')			format('truetype'),
+		 url('/font/social.svg#social') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+.socialBtn {
+	position: relative;
+	display: inline-block;
+	@include prefixer(box-sizing, border-box, webkit moz ms spec);
+	@include prefixer(border-radius, 0.3em, webkit moz ms spec);
+	@include prefixer(user-select, none, webkit moz ms spec);
+	cursor: pointer;
+	overflow: hidden;
+	padding: 0 0.5em;
+	white-space: nowrap;
+	vertical-align: top;
+	font-size: 12px;
+	height: 2em;
+	line-height: 2;
+	text-decoration: none;
+
+	&:before {
+		vertical-align: text-top;
+		content:"";
+		display: inline-block;
+		height: 100%;
+		background-repeat: no-repeat;
+		margin-right: 0.5em;
+	}
+}
+
+.socialBtn--noIcon {
+	&:before {
+		display: none;
+	}
+}
+
+.socialBtn--twitter {
+	border: #ccc solid 0.1em;
+	color: #333;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: bold;
+	text-shadow: 0 0.1em 0 rgba(255,255,255,.5);
+	background: #ffffff;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #dedede 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dedede));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#dedede 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#dedede 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#dedede 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#dedede 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede',GradientType=0 );
+
+	&:hover {
+		border-color: #BBB;
+	}
+
+	&:before {
+		background-image: url(../img/icons/twitter-blue.svg);
+		width: 1.4em;
+	}
+}
+
+.socialBtn--facebook {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	background: #eceef5;
+	border: 0.1em solid #cad4e7;
+	color: #3b5998;
+
+	&:hover {
+		border-color: #9dacce;
+	}
+
+	&:before {
+		color: #3b5998;
+		background-image: url(../img/icons/facebook-blue.svg);
+		width: 1.15em;
+	}
+}
+.socialBtn--facebook--dark {
+	text-shadow: 0 -0.1em 0 #2E4380;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: bold;
+	background: #eceef5;
+	border: 0.1em solid #3455B0;
+	color: #fff;
+	background: #4f6bba;
+	background: -moz-linear-gradient(top,  #4f6bba 0%, #39539f 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f6bba), color-stop(100%,#39539f));
+	background: -webkit-linear-gradient(top,  #4f6bba 0%,#39539f 100%);
+	background: -o-linear-gradient(top,  #4f6bba 0%,#39539f 100%);
+	background: -ms-linear-gradient(top,  #4f6bba 0%,#39539f 100%);
+	background: linear-gradient(to bottom,  #4f6bba 0%,#39539f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f6bba', endColorstr='#39539f',GradientType=0 );
+
+	&:hover {
+		border-color: #2E4380;
+	}
+
+	&:before {
+		color: #fff;
+		background-image: url(../img/icons/facebook-white.svg);
+		width: 1.15em;
+	}
+}
+
+
+a.socialBtn--pinterest {
+	@include linear-gradient(top, #fff 0%, #dedede 100%, $fallback: #f8f8f8);
+	border: #ccc solid 0.1em;
+	color: #cc1e26;
+	padding-right: 4px;
+
+	&:hover {
+		border-color: #BBB;
+	}
+}
+
+
+
+// === social squares ===
+// =====================
+.social-list {
+	// @extend .floated;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 6px;
+
+	li {
+		margin-right: 6px;
+	}
+}
+%social-sq {
+	position: relative;
+	display: inline-block;
+	@include border-radius(2px);
+	@include user-select(none);
+	cursor: pointer;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 21px;
+	width: 21px;
+	line-height: 20px;
+	color: #fff;
+	vertical-align: baseline;
+
+	span {
+		margin: 0;
+	}
+}
+
+a.social-sq-twitter {
+	@extend %social-sq;
+	background-color: #00aced;
+
+	&:hover {
+		background-color: #006e98;
+	}
+}
+
+a.social-sq-facebook {
+	@extend %social-sq;
+	background-color: #3b5998;
+
+	&:hover {
+		background-color: #283c67;
+	}
+}
+
+a.social-sq-pinterest {
+	@extend %social-sq;
+	background-color: #cc1e26;
+
+	&:hover {
+		background-color: #821318;
+	}
+}
+
+a.social-sq-gplus {
+	@extend %social-sq;
+	background-color: #da4835;
+
+	&:hover {
+		background-color: #8f281a;
+	}
+}
