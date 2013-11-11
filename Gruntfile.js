@@ -176,6 +176,15 @@ module.exports = function (grunt) {
 					// ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
 				}]
 			}
+		},
+
+		grunticon: {
+			icons: {
+				options: {
+					src: "img/icons/",
+					dest: "css/icons/"
+				}
+			}
 		}
 	});
 
