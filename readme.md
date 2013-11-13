@@ -1,5 +1,7 @@
 # Social / share links that do not rely on Javascript
 
+#### Please help me find a better name for this repo
+
 * Twitter
 * Facebook
 * Google+
@@ -8,6 +10,22 @@
 * Tumblr
 * Pinterest
 * The Fancy
+
+### Styled links
+I am working on creating a normalised set of share links that look exactly like the official ones with the exception that they are all the same size. My progress is outlined below:
+
+- [x] Twitter
+- [x] Facebook (old style)
+- [x] Facebook (new style)
+- [ ] Google+
+- [ ] Pinterest
+- [ ] Instapaper
+- [ ] The Fancy
+- [ ] Tumblr
+- [ ] LinkedIn
+
+
+### Cop and paste
 
 #### Twitter
 ```html
