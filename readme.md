@@ -1,6 +1,6 @@
 # Social / share links that do not rely on Javascript
 
-#### Please help me find a better name for this repo
+#### !! Please help me find a better name for this repo
 
 * Twitter
 * Facebook
@@ -25,50 +25,51 @@ I am working on creating a normalised set of share links that look exactly like 
 - [ ] LinkedIn
 
 
-### Cop and paste
+### Get started
+If all you need is the markup, copy and paste the items below, but if you want some styling, download the repo and open `index.html` in your browser - **WARNING** they are still a work a progress.
 
-#### Twitter
+#### Twitter [tweet]
 ```html
 <a href="https://twitter.com/intent/tweet?original_referer={REFERRER_URL}&source=tweetbutton&text={TWEET_TEXT}&url={URL}&via={Username}" title="Tweet" class="socialBtn socialBtn--twitter">Tweet</a>
 ```
 
-#### Facebook
+#### Facebook [share]
 ```html
 <a href="http://www.facebook.com/share.php?u={URL}&t={TITLE}" class="socialBtn socialBtn--facebook">Share on Facebook</a>
 ```
 
 
-#### Google+
+#### Google+ [share]
 ```html
 <a href="https://plus.google.com/share?url={URL}" class="socialBtn socialBtn--googlePlus">Google+</a>
 ```
 
 
-#### Pinterest
+#### Pinterest [pin]
 ```html
 <a href="//pinterest.com/pin/create/button/?url={URL}&media={IMAGE_URL}&description={DESCRIPTION}">Pin it</a>
 ```
 
 
-#### Instapaper
+#### Instapaper [read later]
 ```html
 <a href="http://www.instapaper.com/hello2?url={URL}&amp;title={TITLE}">Read Later</a>
 ```
 
 
-#### LinkedIn
+#### LinkedIn [share]
 ```html
 <a href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fblog.easy-designs.net%2Farchives%2F2011%2F12%2F16%2Fjavascript-less-google-finally%2F&original_referer={REFERRER}">LinkedIn</a>
 ```
 
 
-#### The Fancy
+#### The Fancy [fancy it]
 ```html
 <a href="http://www.thefancy.com/fancyit?ItemURL={URL}&Title={TITLE}&Category={CATEGORY}&ImageURL={IMAGE_URL}">Fancy</a>
 ```
 
 
-#### Tumblr
+#### Tumblr [share]
 ```html
 <a href="http://www.tumblr.com/share/link?url={URL}&name={NAME}&description={DESCRIPTION}" title="Share on Tumblr">Share on Tumblr</a>
 ```
