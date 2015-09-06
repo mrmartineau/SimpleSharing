@@ -73,3 +73,7 @@ If all you need is the markup, copy and paste the items below, but if you want s
 ```html
 <a href="http://www.tumblr.com/share/link?url={URL}&name={NAME}&description={DESCRIPTION}" title="Share on Tumblr">Share on Tumblr</a>
 ```
+
+#### Whatsapp [share]
+```html
+<a href="whatsapp://send?text={URL/NAME/DESCRIPTION}" title="Share on Whatsapp">Share on Whatsapp</a>
