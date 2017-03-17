@@ -108,3 +108,17 @@ Below you will see wildcards being used, like `{URL}` & `{TITLE}` etc, these sho
 <!-- Example-->
 <a href="whatsapp://send?text=Have a look at https://github.com/mrmartineau/SimpleSharing/ for some great, simple sharing links" title="Share on Whatsapp">Share on Whatsapp</a>
 ```
+#### Vkontakte [share]
+```html
+<a href="https://vk.com/share.php?url={URL}">Share on Vkontakte</a>
+
+<!-- Example -->
+<a href="https://vk.com/share.php?url=https://google.com">Share on Vkontakte</a>
+```
+#### Odnoklassniki [share]
+```html
+<a href="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl={URL}&title=Share on Odnoklassniki"></a>
+
+<!-- Example -->
+<a href="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=http://google.com&title=Share on Odnoklassniki"></a>
+```
